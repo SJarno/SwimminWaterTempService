@@ -14,6 +14,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.jarno.SwimmingBeachTempService.models.feature.FeatureDto;
 import com.jarno.SwimmingBeachTempService.models.features.FeatureCollectionDto;
+import com.jarno.SwimmingBeachTempService.models.json.FeatureJson;
+import com.jarno.SwimmingBeachTempService.models.json.MetaDataJson;
 
 
 @Component
@@ -47,6 +49,15 @@ public class CustomClientService  {
         return restTemplate.exchange(url, HttpMethod.GET, entity, FeatureDto.class);
 
 
+    }
+
+    public ResponseEntity<?> getJsonById(String id) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        String url = UriComponentsBuilder.fromUriString(baseEndpoint + id + GET_JSON_BY_ID).toUriString();
+        
+        return restTemplate.exchange(url, HttpMethod.GET, entity, FeatureJson.class);
     }
 
 }

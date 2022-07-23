@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.jarno.SwimmingBeachTempService.models.feature.FeatureDto;
 import com.jarno.SwimmingBeachTempService.models.features.FeatureCollectionDto;
+import com.jarno.SwimmingBeachTempService.models.json.FeatureJson;
+import com.jarno.SwimmingBeachTempService.models.json.MetaDataJson;
 
 /* Manipulate response in this service accordingly */
 @Service
@@ -29,6 +31,13 @@ public class FeatureCollectionService {
         ResponseEntity<?> response = this.restService.getGeoJsonById(id);
         return response.getStatusCode().value() == 200
                 ? new ResponseEntity<FeatureDto>((FeatureDto) response.getBody(), HttpStatus.OK)
+                : new ResponseEntity<>(response.getBody(), response.getStatusCode());
+    }
+
+    public ResponseEntity<?> getJsonFeatureById(String id) {
+        ResponseEntity<?> response = this.restService.getJsonById(id);
+        return response.getStatusCode().value() == 200
+                ? new ResponseEntity<FeatureJson>((FeatureJson) response.getBody(), HttpStatus.OK)
                 : new ResponseEntity<>(response.getBody(), response.getStatusCode());
     }
 

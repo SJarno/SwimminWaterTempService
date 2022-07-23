@@ -23,11 +23,15 @@ public class FeatureCollectionController {
         return this.featureCollectionService.getFeatureCollections();
 
     }
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/feature/{id}.geojson")
     public ResponseEntity<?> getFeatureByIdGeoJsonValue(@PathVariable String id) {
         return featureCollectionService.getGeojsonFeatureById(id);
 
     }
+    @GetMapping("/feature/{id}.json")
+    public ResponseEntity<?> getFeatureByIdJsonValue(@PathVariable String id) {
+        return this.featureCollectionService.getJsonFeatureById(id);
+    }
+
 
 }

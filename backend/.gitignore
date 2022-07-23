@@ -1,4 +1,12 @@
 HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+## Angular build ##
+src/main/resources/static
 
 ### STS ###
 .apt_generated
