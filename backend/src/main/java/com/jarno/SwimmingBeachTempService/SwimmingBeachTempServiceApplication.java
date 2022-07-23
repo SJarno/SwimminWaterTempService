@@ -11,6 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class SwimmingBeachTempServiceApplication {
 
+	private final String allowedOrigins = "http://localhost:4200";
+
 	public static void main(String[] args) {
 		SpringApplication.run(SwimmingBeachTempServiceApplication.class, args);
 	}
@@ -24,8 +26,9 @@ public class SwimmingBeachTempServiceApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/status")
-					.allowedOrigins("http://localhost:4200");
+				registry.addMapping("/status");
+				registry.addMapping("/features")
+					.allowedOrigins(allowedOrigins);
 			}
 		};
 	}

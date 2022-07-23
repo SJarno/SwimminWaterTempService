@@ -20,4 +20,6 @@ public class LinkDto {
 
     @JsonAlias("servicemap")
     private ServiceLinkDto serviceMap;
+
+    private SiteLinkDto site;
 }

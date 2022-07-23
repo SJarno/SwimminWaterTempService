@@ -1,0 +1,9 @@
+li {
+    list-style-type: none;
+}
+
+.feature {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid rgb(50, 50, 190);
+}
