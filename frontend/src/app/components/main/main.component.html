@@ -3,18 +3,6 @@
         <p>Status: {{ status }}</p>
     </section>
     <section>
-        <ul *ngIf="features">
-            <!-- Todo: make own component(s) -->
-            <li *ngFor="let feature of features" class="feature">
-                <div>
-                    <p>{{ feature.name }}</p>
-                    <p>{{ feature.id }}</p>
-                    <div>
-                        <p *ngIf="feature.serviceMapUrl">Service: {{ feature.serviceMapUrl.href }}</p>
-                        <p *ngIf="feature.siteUrl">Site: {{ feature.siteUrl.href }}</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <app-leaflet-map></app-leaflet-map>
     </section>
 </main>

@@ -1,0 +1,30 @@
+header {
+    background-color: orange;
+    padding: 1rem
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+    
+}
+.main-title {
+    font-size: 1.5rem;
+}
+
+.link-item {
+    margin: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+h2, a {
+    color: antiquewhite;
+}

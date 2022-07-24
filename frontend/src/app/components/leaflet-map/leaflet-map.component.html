@@ -1,0 +1,5 @@
+<div *ngIf="options && features.length > 0" class="map-template"
+     leaflet 
+     [leafletOptions]="options"
+     (leafletMapReady)="populateLocations($event)">
+</div>

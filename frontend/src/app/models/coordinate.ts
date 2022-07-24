@@ -1,3 +1,4 @@
 export interface Coordinates {
-    coordinates: any[]
+    type: string
+    coordinates: number[]
 }

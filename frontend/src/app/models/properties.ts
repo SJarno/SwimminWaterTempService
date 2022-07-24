@@ -8,4 +8,6 @@ export interface Property {
         serviceMap: Link,
         site: Link
     }
+    tempIn: number
+    tempWater: number
 }

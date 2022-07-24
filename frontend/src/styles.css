@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '../node_modules/reset-css/reset.css'; */
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
